@@ -20,8 +20,8 @@ ax.xaxis.set_major_locator(mdates.MonthLocator())
 #format date
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
 
-ax.set_title('')
-ax.set_ylabel('Count')
+ax.set_title('Daily Vaccinations Progress of the World in 2021')
+ax.set_ylabel('Daily Vaccinations')
 ax.set_xlabel('Date')
 
 plt.show()
