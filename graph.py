@@ -14,3 +14,10 @@ country_data_chart = bar_chart(dataframe=country_data, title=country_data_chart_
                                xlabel="Date")
 
 country_data_chart.show()
+
+from functions.create_stack_bar_chart import stack_bar_chart
+
+country_data_stack_bar_chart = stack_bar_chart(dataframe=country_data, title=country_data_chart_title,
+                                               ylabel='Vaccinations', xlabel='Date')
+
+country_data_stack_bar_chart.show()
