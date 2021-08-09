@@ -6,10 +6,7 @@ from graph import country_data, country_vaccinations_data
 
 
 def stack_bar_chart(dataframe, title, xlabel, ylabel):
-    date = pd.to_datetime(country_vaccinations_data['date'])
-    for row in date:
-        if row == country_data:
-            continue
+    date = pd.to_datetime(df['date'])
 
     plt.style.use('ggplot')
 
@@ -21,10 +18,5 @@ def stack_bar_chart(dataframe, title, xlabel, ylabel):
     ax.xaxis.set_major_locator(mdates.MonthLocator())
     # format date
     ax.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
-
-    ax.set_title("title")
-    ax.set_ylabel("ylabel")
-    ax.set_xlabel("xlabel")
-    plt.show()
 
     return plt
