@@ -1,13 +1,14 @@
 import pandas as pd
 
-from functions.get_data_by_iso import get_distinct_vaccines_company, get_data_by_vaccine_name
+from functions.get_data_by_iso import get_distinct_vaccines_company, get_data_by_vaccine_name, \
+    get_vaccination_data_in_country_with_all_companies
 
 country_vaccinations_by_manufacturer = pd.read_csv('data/country_vaccinations_by_manufacturer.csv')
 
-company_data = get_distinct_vaccines_company(country_vaccinations_by_manufacturer)
+distinc_company_names = get_distinct_vaccines_company(country_vaccinations_by_manufacturer)
 
 vaccine_number_by_company = {}
-for i in company_data:
+for i in distinc_company_names:
     sum = 0
     all_vaccines_by_name = get_data_by_vaccine_name(country_vaccinations_by_manufacturer, i)
     for index, row in all_vaccines_by_name.iterrows():
@@ -22,3 +23,9 @@ for i, j in vaccine_number_by_company.items():
 vaccine_company_percentage = {}
 for i, j in vaccine_number_by_company.items():
     vaccine_company_percentage[i] = (j / all_vaccines_number) * 100
+
+company_country_data = get_vaccination_data_in_country_with_all_companies(country_vaccinations_by_manufacturer, "Austria")
+
+
+
+
