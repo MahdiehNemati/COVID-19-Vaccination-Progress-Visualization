@@ -12,3 +12,8 @@ def get_data_by_vaccine_name(dataframe, vaccine_name: str):
     csv_data = dataframe.loc[dataframe['vaccine'] == vaccine_name]
 
     return csv_data
+
+def get_data_by_vaccine_name_in_country(dataframe, country_name: str):
+    csv_data = dataframe.loc[dataframe['location'] == country_name]
+
+    return csv_data
